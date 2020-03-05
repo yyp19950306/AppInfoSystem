@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!--配置实体类 类型的别名-->
+	<typeAliases>
+		<package name="com.team.appinfosystem.entity"></package>
+	</typeAliases>
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+	</plugins>
+
+
+	<!-- 指定义连接数据的配置 spring框架中配置过这里可以不配置-->
+<!--	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/mybd"/>
+				<property name="username" value="root"/>
+				<property name="password" value="123456"/>
+			</dataSource>
+		</environment>
+	</environments>-->
+
+	<!-- 加载sql映射文件 -->
+	<mappers>
+		<!--加载指定包下的所有sql映射文件-->
+		<package name="com.team.appinfosystem.mapper"></package>
+	</mappers>
+</configuration>
